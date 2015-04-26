@@ -85,7 +85,7 @@ fin<-rbind(subset_train,subset_test)
 #install.packages("reshape")
 library(reshape)
 finmelt <- melt(fin,id=c("subject ID","Activity ID", "Activity_Name"))
-names(finmelt) <- c("Subject","Activity_ID", "Activity_Name","Measurement","Value")
+names(finmelt) <- c("Subject","Activity_ID", "Activity Name","Measurement","Value")
 finmeans <- aggregate(finmelt$Value,list(finmelt$Subject,
                                                finmelt$Activity_ID,finmelt$Activity_Name,finmelt$Measurement),mean)
 
